@@ -1,0 +1,124 @@
+
+@mixin devices ($breakpoint) {
+    @if $breakpoint == xlarge {    
+        @media only screen and (min-width: 1200px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == large {    
+        @media only screen and (min-width: 992px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == medium {    
+        @media only screen and (max-width: 768px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == small {    
+        @media only screen and (max-width: 576px) {
+            @content;
+        }
+    }
+}
+
+@mixin column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin grid-6 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+@mixin space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin scroll {
+    overflow-y: auto;
+    width: 100%;
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--color-neutral-gray);
+        outline: var(--border-width-hairline) solid var(--color-neutral-gray);
+        border-radius: var(--border-radius-pill);
+    }
+    
+    &::-webkit-scrollbar {
+        width: 0.5em;
+    }
+    
+    &::-webkit-scrollbar-track {
+        margin: var(--spacing-squish-md) ;
+    }
+}
+
+@mixin content_progress_bar {
+    padding: var(--spacing-quarck);
+    margin-right: var(--spacing-nano);
+
+    border-right: var(--border-width-hairline) solid;
+    border-left: var(--border-width-hairline) solid;
+    border-color: var(--color-light-gray);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-nano);
+}
+
+@mixin legenda_content {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-quarck);
+}
+
+@mixin legenda_colors {
+    display: inline-flex;
+    height: 10px;
+    width: 10px;
+    transform-style: preserve-3d;
+
+}
+
+@mixin grid_cards {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    grid-template-rows: 200px;
+    padding: var(--spacing-nano) 0;
+    overflow: hidden;
+}
+
+@mixin grid_cards_footer {
+    grid-column: col / -2;
+    grid-row: row 2;
+
+    display: inline-flex;
+    justify-content: space-between;
+    padding: var(--spacing-quarck) 0;
+
+    & > .small_0 {
+        margin-left: -3px;
+    }
+
+    & > .small_100 {
+        margin-right: 24px;
+    }
+}
+
+@mixin legenda {
+    grid-column: col / -2;
+    grid-row: row 3;
+
+    display: inline-flex;
+    justify-content: flex-end;
+
+    gap: var(--spacing-xxs);
+    padding-top: var(--spacing-nano);
+    margin-right: var(--spacing-xxs);
+}

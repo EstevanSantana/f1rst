@@ -1,0 +1,33 @@
+@import "/src/styles/mixin.scss";
+
+.container_card_certo {
+    align-items: flex-end;
+    display: inline-flex;
+    flex-direction: column;
+    height: 100%;    
+    
+    .card_header {
+        display: contents;
+        
+        .card_certo_button_toggle {
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            width: 5px;
+        }
+    }
+    
+    .text_atualizacao {
+        padding: var(--spacing-quarck) 0;
+    }
+    
+    .card_certo {
+        &__sub_title {
+            @include grid-6();
+    
+            &__chamas {
+                @include column();
+            }
+        }
+    }
+}

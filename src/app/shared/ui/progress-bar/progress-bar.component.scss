@@ -1,0 +1,29 @@
+.container {
+    height: 12px;
+    width: 100%;
+    background-color: var(--color-light-gray);
+    border-radius: var(--border-radius-pill);
+    
+}
+
+.filler_partial {
+    height: 100%;
+    background-color: var(--color-light-blue);
+    border-radius: inherit;
+    text-align: right;
+    transition: width 1s ease-in-out;
+    margin-top: -12px;
+    z-index: 1;
+}
+
+.filler {
+    height: 100%;
+    background-color: var(--color-primary-blue);
+    border-radius: inherit;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    text-align: right;
+    transition: width 1s ease-in-out;
+    z-index: 50;
+    position: relative;
+};

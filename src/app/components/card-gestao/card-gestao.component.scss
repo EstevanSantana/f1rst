@@ -1,0 +1,17 @@
+@import "/src/styles/mixin.scss";
+
+.container_card_gestao {
+    align-items: flex-end;
+    display: inline-flex;
+    flex-direction: column;
+    height: 100%;    
+
+    .text_atualizacao {
+        padding: var(--spacing-quarck) 0;
+    }
+    
+    .card_gestao {
+        @include grid-6();
+        grid-template-rows: max-content;
+    }
+}

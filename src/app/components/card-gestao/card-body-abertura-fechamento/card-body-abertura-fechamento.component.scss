@@ -1,0 +1,62 @@
+@import '/src/styles/mixin.scss';
+
+.card_body {
+    border-right: var(--border-width-hairline) solid;
+    border-color: var(--color-light-gray);
+
+    height: 100%;
+
+    &__content_grid {
+       @include grid_cards();
+       
+        &__chart {
+            max-height: 230px;
+        }
+
+        &__container {
+
+            &__list {
+                @include scroll();
+                
+                height: 200px;
+                width: 97%;
+    
+                &__content {
+                   @include content_progress_bar();
+                }    
+            }
+        }
+        
+        &__footer {
+            @include grid_cards_footer();
+        }
+
+        &__legenda {
+            @include legenda();
+            
+            &__marcacoes_completas {
+                @include legenda_content();
+
+                &__color {
+                    @include legenda_colors();
+
+                    background-color: var(--color-primary-blue);
+                }
+            }
+
+            &__marcacoes_parciais {
+                @include legenda_content();
+
+                &__color {
+                    @include legenda_colors();
+                    
+                    background-color: var(--color-light-blue);
+                }
+            }
+
+        }
+    }
+}
+  
+
+  

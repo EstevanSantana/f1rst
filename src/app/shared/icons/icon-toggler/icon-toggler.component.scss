@@ -1,0 +1,17 @@
+.icon {
+    height: max-content;
+    width: max-content;
+    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2px;
+
+    i {
+        width: 5px;
+        height: 5px;
+        
+        border-radius: var(--border-radius-circle);
+        background-color: var(--color-primary-blue);
+    }
+}

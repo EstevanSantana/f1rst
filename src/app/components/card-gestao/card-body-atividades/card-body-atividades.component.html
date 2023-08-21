@@ -1,0 +1,60 @@
+
+<div class='card_body'>
+    <app-heading tag="h6" text="Atividades Mensais" />
+
+    <div class="card_body__content_grid">
+        <div class="card_body__content_grid__chart">
+            <div style="height: 250px;" echarts [options]="chartOptionAtividade"></div>
+        </div>
+
+        <div class="card_body__content_grid__container__list">
+            <div class="card_body__content_grid__container__list">
+                <div class="card_body__content_grid__container__list__content">
+                    <ng-container *ngFor="let item of data">
+        
+                        <app-text-body color="secondary"
+                            size="3"
+                            fontWeight="500"
+                            text='{{ item.nmAg}}'
+                        />
+                        
+                        <app-progress-bar [completed]="convertNumber(item?.percentual)" ></app-progress-bar>
+                    </ng-container>
+                </div>                
+            </div>
+        </div>
+
+        <div class="card_body__content_grid__footer">
+            <app-text-body
+                tag="small" 
+                size="3" 
+                text="0"
+                fontWeight="700"
+                color="light"
+                class="small_0"
+            />
+
+            <app-text-body
+                tag="small" 
+                size="3" 
+                text="12"
+                fontWeight="700"
+                color="light"
+                class="small_100"
+            />
+        </div>
+        
+        <div class="card_body__content_grid__legenda">
+            <span class="card_body__content_grid__legenda__marcacoes_completas">
+                <span class="card_body__content_grid__legenda__marcacoes_completas__color"></span>
+                <app-text-body
+                    tag="small" 
+                    size="3" 
+                    text="Qtde.Atividades Concluidas"
+                    fontWeight="600"
+                    class="small_100"
+                />
+            </span>
+        </div>
+    </div>
+</div>

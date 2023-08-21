@@ -1,0 +1,27 @@
+<div class="container_card_gestao">
+    <app-card-base title="Gestão de Check-In/Check-Out" [size]="'large'">
+
+        <div class="card_header">
+            <app-dropdown 
+                [options]="options"
+            />
+        </div>
+
+        <div class="card_gestao card_body">
+            <app-card-body-abertura-fechamento></app-card-body-abertura-fechamento>
+           
+            <app-card-body-atividades></app-card-body-atividades>
+        </div>
+                
+    </app-card-base>    
+    
+    <div class="text_atualizacao">
+        <app-text-body
+            tag="p" 
+            size="3" 
+            text="Última atualização: 27/08/2023"
+            fontWeight="700"
+            color="light"
+        />
+    </div>
+</div>

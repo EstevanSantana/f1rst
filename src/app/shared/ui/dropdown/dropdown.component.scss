@@ -1,0 +1,75 @@
+@import "/src/styles/mixin.scss";
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    font-family: Arial, sans-serif;
+  
+    &__label {
+        position: absolute;
+        top: -9px;
+        left: 10px;
+        background-color: var(--color-background);
+        color: var(--color-dark-gray-200);
+        padding: 0 6px;
+        font-size: var(--font-size-body-text-3);
+    }
+
+    .dropdown-toggle {
+        @include space-between();
+        cursor: pointer;
+        align-items: center;
+    
+        padding: 10px 16px;
+        
+        line-height: 1.5;
+        border: var(--border-width-hairline) solid #495057;
+        border-radius: var(--border-radius-sm);
+        background-color: var(--color-background);
+                
+        width: 180px;
+
+        .icon {
+            display: flex;
+
+        }
+    }
+  
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        display: none;
+        padding: 0.5rem 0;
+        font-size: 14px;
+        background-color: white;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        
+        @include scroll();
+        max-height: 200px;
+        min-width: 180px;
+
+        &.show {
+            display: block;
+        }
+  
+        .dropdown-item {
+            padding: 0.25rem 1.5rem;
+            display: block;
+            clear: both;
+            font-weight: 400;
+            color: #212529;
+            text-align: inherit;
+            white-space: nowrap;
+            background-color: transparent;
+            border: 0;
+            cursor: pointer;
+        
+                &:hover {
+                    background-color: #f8f9fa;
+                }
+        }
+    }
+  }

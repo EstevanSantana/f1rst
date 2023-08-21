@@ -1,0 +1,52 @@
+<div class="container_card_certo">
+    <app-card-base title="Índice CERTO" [size]="'medium'">
+
+        <div class="card_header">
+            <button class="card_certo_button_toggle">
+                <app-icon-toggler></app-icon-toggler>
+            </button>
+        </div>
+
+
+        <div class="card_certo card_body">
+            <div class="card_certo__sub_title">
+                <div class="card_certo__sub_title__chamas">
+                    <app-text-body color="secondary"
+                        size="2"
+                        fontWeight="600"
+                        text='Chamas'
+                    />
+                    <app-heading tag="h1" 
+                        text="{{ chamada }}"
+                    />
+                </div>
+    
+                <div class="card_certo__sub_title__chamas">
+                    <app-text-body color="secondary"
+                        size="2"
+                        fontWeight="600"
+                        text='Quadrante Atual'
+                    /> 
+                    <app-heading tag="h1" 
+                        color="green"
+                        text="{{ quadrante }}"
+                    />
+                </div>
+            </div>
+        
+            <app-card-certo-body></app-card-certo-body>      
+        </div>
+                
+    </app-card-base>    
+    
+    <div class="text_atualizacao">
+        <app-text-body
+            tag="p" 
+            size="3" 
+            text="Última atualização: {{ atualizacao }}"
+            fontWeight="700"
+            color="light"
+        />
+    </div>
+</div>
+

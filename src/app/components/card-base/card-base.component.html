@@ -1,0 +1,30 @@
+
+<div class="card" [ngClass]="cardSize">
+    <div class="card__header">
+        <div class="card__header__content">
+            <span class="card__header__content__header_title">
+                <span class="card__header__content__title">
+                    <app-text-body
+                        tag="span" 
+                        size="1" 
+                        text="{{title}}"
+                        fontWeight="700"
+                    />
+                    
+                    <app-icon-information></app-icon-information>
+                </span>
+
+                <span class="card__header__footer">
+                    <hr>
+                </span>
+            </span>
+            
+            <ng-content select=".card_header"></ng-content>
+            
+        </div>
+    </div>
+    
+    <ng-content select=".card_body"></ng-content>
+</div>
+
+    

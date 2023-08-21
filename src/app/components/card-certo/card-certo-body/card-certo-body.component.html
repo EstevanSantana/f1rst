@@ -1,0 +1,62 @@
+<div class="card_certo_body">
+    <div class="card_certo_body__list">
+        <div *ngFor="let item of array; let last = last" 
+            [ngbTooltip]="tipContent"
+            placement="end" 
+            class="card_certo_body__list__item"
+            [ngClass]="{'card_certo_body__list__item__last': last}"
+            >
+
+            <ng-template #tipContent>
+                <div class="custom_tooltip">
+                    <p>
+                        Referência
+                        <br>
+                        {{ item.detalhes.referencia }}
+                    </p>
+                    <p>
+                        DePara Chamas 
+                        <br>
+                        {{ item.detalhes.dePara }}
+                    </p>
+                    <p>
+                        Realizado
+                        <br>
+                        {{ item.detalhes.realizado}}
+                    </p>
+                </div>
+
+            </ng-template>
+            
+
+            <span class="card_certo_body__list__item__content_title">
+                <app-text-body 
+                    tag="span" 
+                    size="2" 
+                    text="{{ item.tipo }}" 
+                    fontWeight="500" 
+                    color="secondary" 
+                />
+
+                <span class="card_certo_body__list__item__content_title__santander_content">
+                    <ng-container *ngIf="!item.ativo">
+                        <app-icon-santander-gray></app-icon-santander-gray>
+                    </ng-container>
+
+                    <ng-container *ngIf="item.ativo">
+                        <app-icon-santander></app-icon-santander>
+                    </ng-container>
+
+                    <app-text-body 
+                        tag="span" 
+                        size="2" 
+                        text="{{ !item.valor ? '0,00' : item.valor }}" 
+                        fontWeight="700"
+                        color="secondary" 
+                    />
+                </span>
+            </span>
+            <span class="card_certo_body__list__item__hr" *ngIf="!last"></span>
+        </div>
+    </div>
+</div>

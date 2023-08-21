@@ -1,0 +1,41 @@
+@import '/src/styles//mixin.scss';
+
+.card_certo_body {
+    padding: var(--spacing-nano) 0;
+    height: auto;
+    overflow: hidden;
+
+    &__list { 
+        @include scroll();
+        width: 99.5%;
+        max-height: 400px;
+        padding: var(--spacing-nano) 0;
+        
+        &__item {
+            height: 45px;
+            padding-right: var(--spacing-nano);
+
+            &__content_title {
+                @include space-between();
+                padding: 0 var(--spacing-nano);
+                padding-bottom: var(--spacing-quarck);
+                align-items: center;
+                
+                &__santander_content {
+                    display: flex;
+                    align-items: flex-end;
+                }
+            }         
+
+            &__hr {
+                height: 10px;
+                display: flex;
+                border-bottom: var(--border-width-hairline) solid var(--color-light-gray);
+            }
+
+            &__last {
+                height: 35px;
+            }
+        }
+    }
+}

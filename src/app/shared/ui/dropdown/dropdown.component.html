@@ -1,0 +1,25 @@
+<div class="dropdown">
+    <span class="dropdown__label">
+        <app-text-body tag="span" 
+            size="3" 
+            text="{{ label }} "
+            fontWeight="600" 
+            color="secondary" 
+        />
+    </span>
+    <button class="dropdown-toggle" type="button" (click)="toggleDropdown()">
+        <app-text-body tag="span" 
+            size="2" 
+            text="{{ label }} " 
+            fontWeight="500" 
+            color="dark"
+        />
+        <app-icon-calendar class="icon"></app-icon-calendar>
+    </button>
+    <div class="dropdown-menu" 
+        [ngClass]="{'show': isDropdownOpen}">
+        <ng-container *ngFor="let item of options">
+            <div class="dropdown-item">{{ item }}</div>
+        </ng-container>
+    </div>
+</div>
